@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from "framer-motion";
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   flex: 1;
   height: 100vh;
   display: flex;
@@ -30,7 +31,7 @@ export const Text = styled.p`
   text-align: center;
 `
 
-export const Circle = styled.div`
+export const Circle = styled(motion.div)`
   position: absolute;
   top: -4rem;
   width: 7rem;
