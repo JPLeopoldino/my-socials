@@ -11,12 +11,14 @@ export const Container = styled(motion.div)`
   background-color: #FAFAFA;
 `
 
-export const Title = styled.h1`
+export const Title = styled(motion.h1)`
   font-size: 4rem;
   color: #0F0F0F;
   font-weight: bold;
   text-align: center;
 `
+
+export const Character = styled(motion.span)``
 
 export const Heading = styled.h3`
   font-size: 1.5rem;

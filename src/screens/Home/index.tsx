@@ -2,13 +2,46 @@ import React from "react";
 import * as SC from "./styles";
 
 const Home: React.FC = () => {
+  const title = "Hello World."
+
+  const sentenceAnimation = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.5,
+        staggerChildren: 0.08
+      }
+    }
+  }
+
+  const letterAnimation = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0
+    }
+  }
+
   return (
     <SC.Container
       initial={{ opacity: "0%", scale: "80%" }}
       animate={{ opacity: "100%", scale: "100%" }}
       transition={{ ease: "easeOut", duration: 1 }}
     >
-      <SC.Title>Hello World.</SC.Title>
+      <SC.Title
+        variants={sentenceAnimation}
+        initial="hidden"
+        animate="visible"
+      >
+        {title.split("").map((char, index) => {
+          return (
+            <SC.Character key={index} variants={letterAnimation}>
+              {char}
+            </SC.Character>
+          );
+        })}
+      </SC.Title>
       <SC.Box>
         <SC.Circle
           whileHover={{
